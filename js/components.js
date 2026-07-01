@@ -83,9 +83,10 @@ const FOOTER_HTML = `
       <img src="images/logo-white.png" alt="Wildman Hunting & Outdoor Robertson" class="footer-logo" onerror="this.outerHTML='<div style=&quot;font-size:1.4rem;font-weight:900;background:linear-gradient(90deg,#FFD700,#FF6600,#CC0000);-webkit-background-clip:text;-webkit-text-fill-color:transparent&quot;>WILDMAN ROBERTSON</div>'">
       <p class="footer-brand-desc">Robertson's premier hunting and outdoor shop. Your trusted partner for firearms, ammunition, fishing gear, outdoor equipment and expert advice in the Breede River Valley.</p>
       <div class="footer-socials">
-        <a href="https://www.facebook.com/wildmanrob" target="_blank" rel="noopener" class="soc-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.facebook.com/RobertsonWildman" target="_blank" rel="noopener" class="soc-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/wildmanrob" target="_blank" rel="noopener" class="soc-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="${WA_LINK}" target="_blank" rel="noopener" class="soc-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="${WA_LINK}" target="_blank" rel="noopener" class="soc-btn" title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://chat.whatsapp.com/IIXR1mRwYDpJ2DSXqLEUa3" target="_blank" rel="noopener" class="soc-btn" title="Join our WhatsApp Group" style="font-size:0.7rem;font-weight:700;width:auto;padding:0 0.6rem;border-radius:20px">GROUP</a>
       </div>
     </div>
 
