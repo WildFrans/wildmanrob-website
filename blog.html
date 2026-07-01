@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Wildman Hunting & Outdoor Robertson</title>
+  <meta name="description" content="Hunting tips, fishing guides, gear reviews and outdoor news from the team at Wildman Hunting & Outdoor Robertson in the Breede River Valley.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/components.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<div id="nav-slot"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Blog</span></div>
+    <h1>The <span class="grad-text">Wildman Blog</span></h1>
+    <p class="page-hero-sub">Hunting tips, fishing guides, gear reviews and outdoor news from the Robertson team.</p>
+  </div>
+</div>
+
+<!-- FEATURED POST -->
+<section style="background:var(--bg-secondary);padding:4rem 0">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,215,0,0.08);border:1px solid rgba(255,215,0,0.2);color:var(--yellow);padding:0.3rem 0.9rem;border-radius:25px;font-size:0.78rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem">⭐ Featured Post</div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:900px;margin:0 auto" class="reveal">
+      <div style="background:linear-gradient(135deg,#1a0505,#051a05,#001a2d);display:flex;align-items:center;justify-content:center;font-size:7rem;min-height:300px">🦌</div>
+      <div style="padding:2.5rem">
+        <span class="blog-tag">Hunting Tips</span>
+        <div class="blog-meta" style="margin-top:0.5rem"><i class="fas fa-calendar"></i> June 2025 &nbsp;·&nbsp; <i class="fas fa-clock"></i> 5 min read</div>
+        <h2 style="font-size:1.4rem;margin-bottom:1rem;line-height:1.3">5 Things Every First-Time Hunter in the Western Cape Should Know</h2>
+        <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.65;margin-bottom:1.5rem">From getting your licence sorted to choosing the right calibre for your first hunt — our team shares the essential knowledge that every new hunter needs before heading into the field.</p>
+        <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-arrow-right"></i> Read More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL POSTS -->
+<section style="background:var(--bg-primary)">
+  <div class="container">
+    <div class="sec-header reveal">
+      <h2 class="sec-title">Latest <span class="grad-text">Articles</span></h2>
+      <div class="accent-bar"></div>
+    </div>
+
+    <!-- Category filters -->
+    <div class="filter-row reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="hunting">Hunting</button>
+      <button class="filter-btn" data-filter="fishing">Fishing</button>
+      <button class="filter-btn" data-filter="gear">Gear Reviews</button>
+      <button class="filter-btn" data-filter="news">Shop News</button>
+    </div>
+
+    <div class="blog-grid">
+
+      <div class="blog-card reveal" data-cat="hunting">
+        <div class="blog-img-area" style="background:linear-gradient(135deg,#1a0505,#2d0a0a)">🔫</div>
+        <div class="blog-body">
+          <span class="blog-tag">Hunting</span>
+          <div class="blog-meta"><i class="fas fa-calendar"></i> May 2025 &nbsp;·&nbsp; <i class="fas fa-clock"></i> 4 min</div>
+          <h3>Choosing the Right Rifle Calibre for South African Game</h3>
+          <p>The .308 vs .30-06 vs .270 debate never ends — but the answer depends on what you're hunting. We break it down by species and terrain.</p>
+          <a href="contact.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-cat="fishing">
+        <div class="blog-img-area" style="background:linear-gradient(135deg,#00101a,#001a2d)">🎣</div>
+        <div class="blog-body">
+          <span class="blog-tag">Fishing</span>
+          <div class="blog-meta"><i class="fas fa-calendar"></i> May 2025 &nbsp;·&nbsp; <i class="fas fa-clock"></i> 3 min</div>
+          <h3>Breede River Fishing Guide — What's Biting This Season</h3>
+          <p>The Breede River is one of the Western Cape's best fishing spots. Here's what species are active, what bait to use, and the best spots near Robertson.</p>
+          <a href="contact.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-cat="gear">
+        <div class="blog-img-area" style="background:linear-gradient(135deg,#0a0a1a,#12122d)">🔭</div>
+        <div class="blog-body">
+          <span class="blog-tag">Gear Review</span>
+          <div class="blog-meta"><i class="fas fa-calendar"></i> April 2025 &nbsp;·&nbsp; <i class="fas fa-clock"></i> 5 min</div>
+          <h3>Bushnell vs Nikko Stirling: Which Scope is Worth Your Money?</h3>
+          <p>We compare two of the most popular mid-range hunting scopes available in South Africa. Real-world performance, clarity, durability and value.</p>
+          <a href="contact.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-cat="hunting">
+        <div class="blog-img-area" style="background:linear-gradient(135deg,#051a05,#0d2d0d)">🦌</div>
+        <div class="blog-body">
+          <span class="blog-tag">Hunting</span>
+          <div class="blog-meta"><i class="fas fa-calendar"></i> April 2025 &nbsp;·&nbsp; <i class="fas fa-clock"></i> 6 min</div>
+          <h3>How to Get Your First Firearm Licence in South Africa</h3>
+          <p>Step-by-step guide to applying for your competency certificate and firearm licence under the FCA. We simplify the process — and we can help you do it right here in Robertson.</p>
+          <a href="services.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-cat="fishing">
+        <div class="blog-img-area" style="background:linear-gradient(135deg,#001a2d,#00102d)">🦟</div>
+        <div class="blog-body">
+          <span class="blog-tag">Fishing</span>
+          <div class="blog-meta"><i class="fas fa-calendar"></i> March 2025 &nbsp;·&nbsp; <i class="fas fa-clock"></i> 3 min</div>
+          <h3>Top 5 Lures for Bass Fishing in the Breede River Valley</h3>
+          <p>Largemouth bass are abundant in the dams and slow sections of the Breede. These five lures consistently produce results for our local anglers.</p>
+          <a href="contact.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-cat="gear">
+        <div class="blog-img-area" style="background:linear-gradient(135deg,#1a0a00,#2d1500)">🔪</div>
+        <div class="blog-body">
+          <span class="blog-tag">Gear Review</span>
+          <div class="blog-meta"><i class="fas fa-calendar"></i> March 2025 &nbsp;·&nbsp; <i class="fas fa-clock"></i> 4 min</div>
+          <h3>Leatherman Wave+ Review — Still the Best Multi-Tool for Hunters?</h3>
+          <p>We've been carrying the Leatherman Wave+ for years. After extensive field use across hunting camps and fishing trips, here's our honest verdict.</p>
+          <a href="contact.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-cat="news">
+        <div class="blog-img-area" style="background:linear-gradient(135deg,#1a1000,#2d1e00)">🏪</div>
+        <div class="blog-body">
+          <span class="blog-tag">Shop News</span>
+          <div class="blog-meta"><i class="fas fa-calendar"></i> February 2025 &nbsp;·&nbsp; <i class="fas fa-clock"></i> 2 min</div>
+          <h3>New Stock Arrived — Hornady Ammunition and Shimano Reels</h3>
+          <p>We've just received a big new shipment including popular Hornady calibres and Shimano's latest spinning reels. Come check it out in-store or ask us on WhatsApp.</p>
+          <a href="https://wa.me/27639370985?text=Hi%20Wildman%20Robertson!%20Tell%20me%20more%20about%20the%20new%20stock." target="_blank" class="read-more">Ask on WhatsApp <i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-cat="hunting">
+        <div class="blog-img-area" style="background:linear-gradient(135deg,#1a0a00,#0a1a00)">🏕️</div>
+        <div class="blog-body">
+          <span class="blog-tag">Hunting</span>
+          <div class="blog-meta"><i class="fas fa-calendar"></i> January 2025 &nbsp;·&nbsp; <i class="fas fa-clock"></i> 5 min</div>
+          <h3>Essential Gear Checklist for Your First Hunting Trip</h3>
+          <p>Whether you're going after springbok, kudu or warthog — this checklist will make sure you don't forget anything important before you head out.</p>
+          <a href="contact.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-cat="news">
+        <div class="blog-img-area" style="background:linear-gradient(135deg,#051a05,#0d2d0d)">⭐</div>
+        <div class="blog-body">
+          <span class="blog-tag">Shop News</span>
+          <div class="blog-meta"><i class="fas fa-calendar"></i> January 2025 &nbsp;·&nbsp; <i class="fas fa-clock"></i> 2 min</div>
+          <h3>Join Our Rewards Program — Earn Points on Every Purchase</h3>
+          <p>Our loyalty rewards program is live. Sign up in-store and start earning points today. The more you spend, the more you save on future purchases.</p>
+          <a href="services.html#rewards" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER / UPDATES -->
+<section style="background:var(--bg-secondary)">
+  <div class="container">
+    <div style="max-width:600px;margin:0 auto;text-align:center" class="reveal">
+      <div style="font-size:2.5rem;margin-bottom:1rem">📬</div>
+      <h2 style="font-size:2rem;margin-bottom:0.75rem">Want <span class="grad-text">More Tips &amp; Deals?</span></h2>
+      <p style="color:var(--text-secondary);margin-bottom:2rem">Follow us on Facebook and Instagram for weekly tips, gear drops and exclusive in-store specials. Or join our WhatsApp broadcast list for instant updates.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="https://www.facebook.com/wildmanrob" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-facebook-f"></i> Follow on Facebook</a>
+        <a href="https://wa.me/27639370985?text=Hi!%20Please%20add%20me%20to%20your%20WhatsApp%20specials%20list." target="_blank" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Join WhatsApp List</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+</body>
+</html>

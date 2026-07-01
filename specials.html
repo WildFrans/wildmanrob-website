@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current Specials | Wildman Hunting & Outdoor Robertson</title>
+  <meta name="description" content="This month's specials at Wildman Hunting & Outdoor Robertson — firearms, optics, ammunition and outdoor gear deals. Robertson, Western Cape.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ---- Specials Gallery ---- */
+    .specials-hero {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .specials-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at top right, rgba(204,0,0,0.14), transparent 60%);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      border-color: var(--orange);
+      box-shadow: 0 12px 30px rgba(255,102,0,0.2);
+    }
+
+    .gallery-img-wrap {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-secondary);
+    }
+    .gallery-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover .gallery-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .gallery-item-cat {
+      position: absolute; top: 0.75rem; left: 0.75rem;
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; padding: 0.2rem 0.6rem; border-radius: 25px;
+      background: rgba(0,0,0,0.7); color: var(--yellow);
+      backdrop-filter: blur(4px);
+    }
+    .gallery-zoom-icon {
+      position: absolute; top: 0.75rem; right: 0.75rem;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 0.8rem; opacity: 0; transition: var(--transition);
+    }
+    .gallery-item:hover .gallery-zoom-icon { opacity: 1; }
+
+    .gallery-body {
+      padding: 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-body h3 { font-size: 0.95rem; margin-bottom: 0.3rem; line-height: 1.3; }
+    .gallery-price {
+      font-size: 1.2rem; font-weight: 800; color: var(--yellow); margin-bottom: 0.5rem;
+    }
+    .gallery-body p {
+      font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; flex: 1; margin-bottom: 0.75rem;
+    }
+    .gallery-enquire {
+      display: flex; align-items: center; gap: 0.4rem;
+      background: var(--whatsapp); color: white;
+      padding: 0.4rem 0.9rem; border-radius: 25px;
+      font-size: 0.78rem; font-weight: 600; width: fit-content;
+      transition: var(--transition);
+    }
+    .gallery-enquire:hover { background: #1ebe5d; color: white; }
+
+    /* Featured items */
+    .gallery-item.featured {
+      grid-column: span 1;
+    }
+    @media (min-width: 900px) {
+      .gallery-item.featured:nth-child(-n+4) {
+        grid-column: span 1;
+      }
+    }
+
+    /* ---- LIGHTBOX ---- */
+    .lightbox {
+      display: none;
+      position: fixed; inset: 0; z-index: 99999;
+      background: rgba(0,0,0,0.95);
+      align-items: center; justify-content: center;
+      padding: 1rem;
+    }
+    .lightbox.active { display: flex; }
+
+    .lb-inner {
+      position: relative;
+      max-width: 900px; width: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 1.25rem;
+      max-height: 95vh;
+    }
+
+    .lb-img-wrap {
+      flex: 1;
+      display: flex; align-items: center; justify-content: center;
+      max-height: 75vh; width: 100%;
+    }
+    .lb-img-wrap img {
+      max-width: 100%; max-height: 75vh;
+      object-fit: contain; border-radius: var(--radius-md);
+    }
+
+    .lb-info {
+      text-align: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .lb-info .lb-text { text-align: left; flex: 1; }
+    .lb-info h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .lb-info .lb-price { font-size: 1.4rem; font-weight: 800; color: var(--yellow); }
+    .lb-info p { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem; line-height: 1.5; }
+
+    .lb-actions { display: flex; gap: 0.75rem; flex-shrink: 0; }
+
+    .lb-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 1.2rem; cursor: pointer; transition: var(--transition);
+    }
+    .lb-nav:hover { background: var(--orange); border-color: var(--orange); }
+    .lb-prev { left: -60px; }
+    .lb-next { right: -60px; }
+
+    .lb-close {
+      position: absolute; top: -50px; right: 0;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 1.1rem; cursor: pointer; transition: var(--transition);
+    }
+    .lb-close:hover { background: var(--red); border-color: var(--red); }
+
+    .lb-counter {
+      position: absolute; top: -45px; left: 0;
+      color: var(--text-muted); font-size: 0.85rem;
+    }
+
+    .specials-empty {
+      text-align: center; padding: 4rem 0; color: var(--text-muted);
+      display: none;
+    }
+    .specials-empty.visible { display: block; }
+
+    /* No price badge for events/notices */
+    .gallery-item[data-cat="event"] .gallery-price,
+    .gallery-item[data-cat="notice"] .gallery-price { display: none; }
+
+    @media (max-width: 768px) {
+      .lb-prev { left: 0; top: unset; bottom: -60px; transform: none; }
+      .lb-next { right: 0; top: unset; bottom: -60px; transform: none; }
+      .lb-info { flex-direction: column; }
+    }
+  </style>
+  <script src="js/components.js" defer></script>
+  <script src="js/specials-data.js"></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<div id="nav-slot"></div>
+
+<!-- HERO -->
+<div class="specials-hero">
+  <div class="container" style="position:relative;z-index:1">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Specials</span></div>
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1.5rem">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--red);color:white;padding:0.3rem 0.8rem;border-radius:4px;font-size:0.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem">
+          <span style="width:7px;height:7px;border-radius:50%;background:white;animation:blink 1s infinite;display:inline-block"></span> Live Specials
+        </div>
+        <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:900">
+          <span class="grad-text" id="specials-month-title">June 2026</span><br>
+          <span style="font-size:0.55em;color:var(--text-secondary);font-weight:400;letter-spacing:2px;text-transform:uppercase">Current Deals &amp; Promotions</span>
+        </h1>
+        <p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.5rem">Updated: <span id="specials-updated">—</span> · <span id="specials-count">—</span> deals this month</p>
+      </div>
+      <div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap">
+        <a href="https://wa.me/27639370985?text=Hi%20Wildman%20Robertson!%20Please%20send%20me%20the%20full%20specials%20list." target="_blank" class="btn btn-wa">
+          <i class="fab fa-whatsapp"></i> Get Full Specials on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section style="background:var(--bg-primary)">
+  <div class="container">
+
+    <!-- Filters -->
+    <div class="filter-row" id="specials-filters" style="margin-bottom:2rem">
+      <button class="filter-btn active" data-filter="all">All Deals</button>
+      <button class="filter-btn" data-filter="firearms">Firearms</button>
+      <button class="filter-btn" data-filter="optics">Optics</button>
+      <button class="filter-btn" data-filter="ammo">Ammo</button>
+      <button class="filter-btn" data-filter="accessories">Accessories</button>
+      <button class="filter-btn" data-filter="event">Events</button>
+    </div>
+
+    <div class="gallery-grid" id="gallery-grid"></div>
+    <div class="specials-empty" id="specials-empty">
+      <div style="font-size:3rem;margin-bottom:1rem">🔍</div>
+      <h3>No deals in this category</h3>
+      <p style="margin-top:0.5rem">Try another filter or <a href="https://wa.me/27639370985" target="_blank" style="color:var(--orange)">ask us on WhatsApp</a> for availability.</p>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.5rem;text-align:center;margin-top:3rem" class="reveal">
+      <h3 style="font-size:1.5rem;margin-bottom:0.75rem">Don't see what you're looking for?</h3>
+      <p style="color:var(--text-muted);margin-bottom:1.75rem">We have more specials in-store and new stock arriving regularly. Contact us and we'll let you know what's available.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="https://wa.me/27639370985?text=Hi%20Wildman%20Robertson!%20What%20specials%20do%20you%20have%20available?" target="_blank" class="btn btn-wa btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp for More Deals</a>
+        <a href="tel:0230360000" class="btn btn-outline btn-lg"><i class="fas fa-phone"></i> 023 036 0000</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <div class="lb-inner">
+    <span class="lb-counter" id="lb-counter"></span>
+    <button class="lb-close" id="lb-close" title="Close (Esc)"><i class="fas fa-times"></i></button>
+    <div class="lb-img-wrap">
+      <img src="" alt="" id="lb-img">
+    </div>
+    <div class="lb-info">
+      <div class="lb-text">
+        <h3 id="lb-title"></h3>
+        <div class="lb-price" id="lb-price"></div>
+        <p id="lb-desc"></p>
+      </div>
+      <div class="lb-actions">
+        <a href="#" id="lb-enquire" target="_blank" rel="noopener" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Enquire</a>
+      </div>
+    </div>
+    <button class="lb-nav lb-prev" id="lb-prev" title="Previous"><i class="fas fa-chevron-left"></i></button>
+    <button class="lb-nav lb-next" id="lb-next" title="Next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</div>
+
+<div id="footer-slot"></div>
+
+<script>
+// ---- Render gallery from SPECIALS data ---- //
+(function () {
+  const grid = document.getElementById('gallery-grid');
+  const monthTitle = document.getElementById('specials-month-title');
+  const updatedEl = document.getElementById('specials-updated');
+  const countEl = document.getElementById('specials-count');
+  const empty = document.getElementById('specials-empty');
+
+  if (typeof SPECIALS === 'undefined') return;
+
+  monthTitle.textContent = SPECIALS.month;
+  updatedEl.textContent = SPECIALS.updated;
+
+  // Build image items (exclude notice category from count)
+  const dealImages = SPECIALS.images.filter(i => i.category !== 'notice');
+  countEl.textContent = dealImages.length;
+
+  // Render
+  SPECIALS.images.forEach((item, idx) => {
+    const card = document.createElement('div');
+    card.className = 'gallery-item reveal' + (item.featured ? ' featured' : '');
+    card.dataset.cat = item.category;
+    card.dataset.idx = idx;
+
+    const catLabels = {
+      firearms: 'Firearms', optics: 'Optics', ammo: 'Ammunition',
+      accessories: 'Accessories', event: 'Event', notice: 'Notice'
+    };
+
+    card.innerHTML = `
+      <div class="gallery-img-wrap">
+        <img src="images/specials/${item.file}" alt="${item.title}" loading="lazy"
+             onerror="this.parentElement.style.background='var(--bg-card)';this.style.display='none'">
+        <span class="gallery-item-cat">${catLabels[item.category] || item.category}</span>
+        <span class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></span>
+      </div>
+      <div class="gallery-body">
+        <h3>${item.title}</h3>
+        ${item.price ? `<div class="gallery-price">${item.price}</div>` : ''}
+        ${item.desc ? `<p>${item.desc}</p>` : '<p style="flex:1"></p>'}
+        ${item.category !== 'notice' ? `
+        <a href="https://wa.me/27639370985?text=${encodeURIComponent('Hi Wildman Robertson! I\'m interested in: ' + item.title + '. Please give me more details.')}"
+           target="_blank" rel="noopener" class="gallery-enquire" onclick="event.stopPropagation()">
+          <i class="fab fa-whatsapp"></i> Enquire
+        </a>` : ''}
+      </div>
+    `;
+
+    card.addEventListener('click', () => openLightbox(idx));
+    grid.appendChild(card);
+  });
+
+  // ---- Filter buttons ---- //
+  document.querySelectorAll('#specials-filters .filter-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#specials-filters .filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      let visible = 0;
+      document.querySelectorAll('.gallery-item').forEach(card => {
+        const show = filter === 'all' || card.dataset.cat === filter;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      empty.classList.toggle('visible', visible === 0);
+    });
+  });
+
+  // ---- Lightbox ---- //
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbTitle = document.getElementById('lb-title');
+  const lbPrice = document.getElementById('lb-price');
+  const lbDesc = document.getElementById('lb-desc');
+  const lbEnquire = document.getElementById('lb-enquire');
+  const lbCounter = document.getElementById('lb-counter');
+  let currentIdx = 0;
+
+  function openLightbox(idx) {
+    currentIdx = idx;
+    renderLb();
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function renderLb() {
+    const item = SPECIALS.images[currentIdx];
+    lbImg.src = 'images/specials/' + item.file;
+    lbImg.alt = item.title;
+    lbTitle.textContent = item.title;
+    lbPrice.textContent = item.price || '';
+    lbDesc.textContent = item.desc || '';
+    lbCounter.textContent = (currentIdx + 1) + ' / ' + SPECIALS.images.length;
+    const msg = encodeURIComponent('Hi Wildman Robertson! I\'m interested in: ' + item.title + '. Please give me more details.');
+    lbEnquire.href = 'https://wa.me/27639370985?text=' + msg;
+  }
+
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev').addEventListener('click', e => {
+    e.stopPropagation();
+    currentIdx = (currentIdx - 1 + SPECIALS.images.length) % SPECIALS.images.length;
+    renderLb();
+  });
+  document.getElementById('lb-next').addEventListener('click', e => {
+    e.stopPropagation();
+    currentIdx = (currentIdx + 1) % SPECIALS.images.length;
+    renderLb();
+  });
+
+  lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') { currentIdx = (currentIdx - 1 + SPECIALS.images.length) % SPECIALS.images.length; renderLb(); }
+    if (e.key === 'ArrowRight') { currentIdx = (currentIdx + 1) % SPECIALS.images.length; renderLb(); }
+  });
+
+})();
+</script>
+</body>
+</html>
