@@ -15,7 +15,7 @@ const NAV_HTML = `
 <nav class="navbar" id="mainNav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo" aria-label="Wildman Robertson Home">
-      <img src="images/logo-white.png" alt="Wildman Hunting & Outdoor Robertson" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="images/logo-dark.png" alt="Wildman Hunting & Outdoor Robertson" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="nav-logo-fallback" style="display:none">
         <span class="brand">WILDMAN</span>
         <span class="loc">Robertson</span>
