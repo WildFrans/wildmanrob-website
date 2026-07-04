@@ -13,9 +13,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.wildmanrob.co.za/">
   <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Rubik:wght@400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/components.js" defer></script>
+  <script src="js/specials-data.js"></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -69,13 +73,16 @@
       <div style="width:100%;max-width:420px">
         <div class="hero-card" style="position:relative">
           <div class="hero-spin-badge">HOT<br>DEALS<br>LIVE</div>
-          <div class="hero-card-img"><i class="fas fa-crosshairs" style="font-size:4.5rem;color:rgba(100,60,0,0.35)"></i></div>
+          <div class="prod-img" style="background:#e8e4dc;padding:0;height:280px">
+            <img id="heroDealImg" src="images/specials/Kruit-Promo-Julie.jpg" alt="Somchem Powder Sale"
+                 style="width:100%;height:100%;object-fit:cover">
+          </div>
           <div class="hero-card-body">
             <span class="hero-card-tag"><i class="fas fa-star"></i> Featured Special</span>
-            <h3>Musgrave Bolt-Action Rifle</h3>
-            <div class="hero-card-price">POA <span class="was">Contact for Price</span></div>
+            <h3 id="heroDealTitle">Somchem Powder Sale</h3>
+            <div class="hero-card-price" id="heroDealPrice">From R499</div>
             <div style="margin-top:1rem">
-              <button class="btn btn-primary btn-sm" data-enquire="Musgrave Bolt-Action Rifle" style="width:100%;justify-content:center">
+              <button class="btn btn-primary btn-sm" id="heroDealBtn" data-enquire="Somchem Powder Sale" style="width:100%;justify-content:center">
                 <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
               </button>
             </div>
@@ -198,88 +205,8 @@
       </div>
       <a href="contact.html" class="btn btn-outline"><i class="fas fa-tag"></i> Ask About More Deals</a>
     </div>
-    <div class="products-grid reveal">
-
-      <!-- June 2026 Specials — real marketing images -->
-      <div class="product-card" data-cat="firearms">
-        <div class="prod-img" style="background:#e8e4dc;padding:0">
-          <img src="images/specials/Ruger-American-G22.jpg" alt="Ruger American Gen 2 Deals"
-               style="width:100%;height:100%;object-fit:cover"
-               onerror="this.style.opacity=0">
-          <span class="prod-badge">DEALS</span>
-        </div>
-        <div class="prod-body">
-          <div class="prod-cat">Firearms · June Special</div>
-          <h3>Ruger American Gen 2</h3>
-          <p>6.5 Creedmoor · .243 Win · .308 Win · .223 Rem. Prices exclusive to Robertson.</p>
-          <div class="prod-price"><span class="price-current">From R20,499</span></div>
-          <div class="prod-actions">
-            <button class="btn btn-primary btn-sm" data-enquire="Ruger American Gen 2" style="flex:1;justify-content:center">
-              <i class="fab fa-whatsapp"></i> Enquire
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card" data-cat="firearms">
-        <div class="prod-img" style="background:#e8e4dc;padding:0">
-          <img src="images/specials/Marlin.jpg" alt="Marlin 45-70 Govt"
-               style="width:100%;height:100%;object-fit:cover"
-               onerror="this.style.opacity=0">
-        </div>
-        <div class="prod-body">
-          <div class="prod-cat">Firearms · June Special</div>
-          <h3>Marlin 45-70 Govt Mod 1895 SBL</h3>
-          <p>Stainless lever-action with laminate stock. An iconic piece of American firearm history.</p>
-          <div class="prod-price"><span class="price-current">R43,799</span></div>
-          <div class="prod-actions">
-            <button class="btn btn-primary btn-sm" data-enquire="Marlin 45-70 Govt Mod 1895 SBL" style="flex:1;justify-content:center">
-              <i class="fab fa-whatsapp"></i> Enquire
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card" data-cat="optics">
-        <div class="prod-img" style="background:#e8e4dc;padding:0">
-          <img src="images/specials/Swarovski-Optics-June.jpg" alt="Swarovski Optics June Deals"
-               style="width:100%;height:100%;object-fit:cover"
-               onerror="this.style.opacity=0">
-          <span class="prod-badge">PREMIUM</span>
-        </div>
-        <div class="prod-body">
-          <div class="prod-cat">Optics · June Special</div>
-          <h3>Swarovski Optics</h3>
-          <p>Z3 4-12×50 — R22,899 · Z5+ 5-25×56 — R44,999 · DS Gen 3 + FREE R10k gift — R109,999</p>
-          <div class="prod-price"><span class="price-current">From R22,899</span></div>
-          <div class="prod-actions">
-            <button class="btn btn-primary btn-sm" data-enquire="Swarovski Optics" style="flex:1;justify-content:center">
-              <i class="fab fa-whatsapp"></i> Enquire
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card" data-cat="optics">
-        <div class="prod-img" style="background:#e8e4dc;padding:0">
-          <img src="images/specials/Simmons-Rangefinder.jpg" alt="Simmons Pro Hunter Rangefinder"
-               style="width:100%;height:100%;object-fit:cover"
-               onerror="this.style.opacity=0">
-          <span class="prod-badge">INCL. BATTERY</span>
-        </div>
-        <div class="prod-body">
-          <div class="prod-cat">Optics · June Special</div>
-          <h3>Simmons Pro Hunter Rangefinder</h3>
-          <p>6×2mm laser rangefinder. Battery included. Accurate to 600m. Essential for long-range hunting.</p>
-          <div class="prod-price"><span class="price-current">R2,899</span></div>
-          <div class="prod-actions">
-            <button class="btn btn-primary btn-sm" data-enquire="Simmons Pro Hunter Rangefinder" style="flex:1;justify-content:center">
-              <i class="fab fa-whatsapp"></i> Enquire
-            </button>
-          </div>
-        </div>
-      </div>
-
+    <div class="products-grid reveal" id="homeHotDeals">
+      <!-- Populated dynamically from js/specials-data.js, see script at end of body -->
     </div>
 
     <div style="text-align:center;margin-top:3rem" class="reveal">
@@ -459,7 +386,7 @@
   <div class="container">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap">
       <div style="display:flex;align-items:center;gap:1.5rem">
-        <div style="width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <div style="width:60px;height:60px;background:var(--whatsapp);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
           <i class="fab fa-whatsapp" style="font-size:1.8rem;color:#fff"></i>
         </div>
         <div>
@@ -468,7 +395,7 @@
         </div>
       </div>
       <a href="https://chat.whatsapp.com/IIXR1mRwYDpJ2DSXqLEUa3" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:0.6rem;background:#25D366;color:#fff;padding:0.85rem 1.75rem;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;white-space:nowrap;flex-shrink:0">
+         style="display:inline-flex;align-items:center;gap:0.6rem;background:var(--whatsapp);color:#fff;padding:0.85rem 1.75rem;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;white-space:nowrap;flex-shrink:0">
         <i class="fab fa-whatsapp"></i> Join the Group
       </a>
     </div>
@@ -492,6 +419,55 @@
 
 <!-- Footer injected by components.js -->
 <div id="footer-slot"></div>
+
+<script>
+// ---- Render hero deal + hot deals grid from SPECIALS data (js/specials-data.js) ---- //
+(function () {
+  if (typeof SPECIALS === 'undefined' || !SPECIALS.images || !SPECIALS.images.length) return;
+
+  const dealItems = SPECIALS.images.filter(i => i.category !== 'notice' && i.category !== 'event');
+  if (!dealItems.length) return;
+
+  const featured = dealItems.filter(i => i.featured);
+  const heroItem = (featured[0] || dealItems[0]);
+  const gridItems = (featured.length ? featured : dealItems).slice(0, 4);
+
+  // Hero card
+  const heroImg = document.getElementById('heroDealImg');
+  const heroTitle = document.getElementById('heroDealTitle');
+  const heroPrice = document.getElementById('heroDealPrice');
+  const heroBtn = document.getElementById('heroDealBtn');
+  if (heroImg) { heroImg.src = 'images/specials/' + heroItem.file; heroImg.alt = heroItem.title; }
+  if (heroTitle) heroTitle.textContent = heroItem.title;
+  if (heroPrice) heroPrice.textContent = heroItem.price || 'POA';
+  if (heroBtn) heroBtn.dataset.enquire = heroItem.title;
+
+  // Hot deals grid
+  const grid = document.getElementById('homeHotDeals');
+  if (!grid) return;
+  const catLabels = { firearms: 'Firearms', optics: 'Optics', ammo: 'Ammunition', accessories: 'Accessories' };
+  const monthName = (SPECIALS.month || '').split(' ')[0];
+
+  grid.innerHTML = gridItems.map(item => `
+    <div class="product-card" data-cat="${item.category}">
+      <div class="prod-img" style="background:#e8e4dc;padding:0">
+        <img src="images/specials/${item.file}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.opacity=0">
+      </div>
+      <div class="prod-body">
+        <div class="prod-cat">${catLabels[item.category] || item.category}${monthName ? ' · ' + monthName + ' Special' : ''}</div>
+        <h3>${item.title}</h3>
+        <p>${item.desc || ''}</p>
+        <div class="prod-price"><span class="price-current">${item.price || 'POA'}</span></div>
+        <div class="prod-actions">
+          <button class="btn btn-primary btn-sm" data-enquire="${item.title}" style="flex:1;justify-content:center">
+            <i class="fab fa-whatsapp"></i> Enquire
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+})();
+</script>
 
 </body>
 </html>
