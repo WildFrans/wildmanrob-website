@@ -4,8 +4,10 @@
    ============================================ */
 
 :root {
-  --yellow: #A86B00;
-  --orange: #C44A00;
+  /* Darkened from brand hex (#FFD700/#FF6600) so text usages clear WCAG AA (4.5:1) on the cream theme.
+     The pure brand hues stay reserved for the WILDMAN wordmark gradient below. */
+  --yellow: #8A5800;
+  --orange: #B54300;
   --red: #B82000;
   --dark-red: #7A0000;
   --green: #2E7D32;
@@ -19,10 +21,10 @@
 
   --text-primary: #1A1816;
   --text-secondary: #4A4744;
-  --text-muted: #8A8380;
+  --text-muted: #6B6460;
 
   --border: #DDD9D0;
-  --border-accent: #C44A00;
+  --border-accent: #B54300;
 
   --gradient-hero: radial-gradient(ellipse at top right, rgba(180,40,0,0.20) 0%, transparent 60%),
                    radial-gradient(ellipse at bottom left, rgba(30,60,20,0.25) 0%, transparent 60%);
@@ -33,18 +35,21 @@
   --radius-md: 8px;
   --radius-lg: 16px;
   --transition: 0.3s ease;
-  --whatsapp: #25D366;
+  --whatsapp: #0F823C;
   --max-w: 1280px;
 }
 
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+body { font-family: 'Nunito Sans', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; transition: var(--transition); }
 img { max-width: 100%; height: auto; display: block; }
 ul { list-style: none; }
-h1,h2,h3,h4,h5,h6 { font-weight: 700; line-height: 1.2; }
+h1,h2,h3,h4,h5,h6, .nav-logo-fallback { font-family: 'Rubik', sans-serif; font-weight: 700; line-height: 1.2; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--red); outline-offset: 2px;
+}
 
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
 section { padding: var(--section-pad) 0; }
@@ -52,7 +57,7 @@ section { padding: var(--section-pad) 0; }
 /* ---- Announcement Bar ---- */
 .announcement-bar {
   background: #1a2618;
-  color: var(--yellow);
+  color: #E8B84D; /* dedicated bright amber for AA contrast on this dark bg — var(--yellow) is tuned for the light theme */
   text-align: center;
   padding: 9px 1rem;
   font-size: 0.88rem;
@@ -112,11 +117,12 @@ section { padding: var(--section-pad) 0; }
   padding: 0.5rem 1rem; border-radius: 25px;
   font-size: 0.82rem; font-weight: 600;
 }
-.btn-wa-nav:hover { background: #1ebe5d; color: white; transform: translateY(-1px); }
+.btn-wa-nav:hover { background: #0c6b30; color: white; transform: translateY(-1px); }
 
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
   cursor: pointer; padding: 0.5rem; background: none; border: none;
+  min-width: 44px; min-height: 44px; align-items: center; justify-content: center;
 }
 .hamburger span { display: block; width: 25px; height: 2px; background: #fff; transition: var(--transition); border-radius: 2px; }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -153,11 +159,11 @@ section { padding: var(--section-pad) 0; }
   box-shadow: 0 4px 20px rgba(37,211,102,0.5);
   animation: waPulse 2.5s infinite;
 }
-.wa-float:hover { background: #1ebe5d; color: white; transform: scale(1.05); }
+.wa-float:hover { background: #0c6b30; color: white; transform: scale(1.05); }
 .wa-float i { font-size: 1.3rem; }
 @keyframes waPulse {
-  0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
-  50% { box-shadow: 0 4px 35px rgba(37,211,102,0.9), 0 0 0 10px rgba(37,211,102,0.1); }
+  0%,100% { box-shadow: 0 4px 20px rgba(15,130,60,0.5); }
+  50% { box-shadow: 0 4px 35px rgba(15,130,60,0.9), 0 0 0 10px rgba(15,130,60,0.1); }
 }
 
 /* ============================================
@@ -177,7 +183,7 @@ section { padding: var(--section-pad) 0; }
 .btn-ghost { background: rgba(255,255,255,0.07); color: var(--text-primary); border: 1px solid var(--border); }
 .btn-ghost:hover { background: rgba(255,255,255,0.12); }
 .btn-wa { background: var(--whatsapp); color: white; }
-.btn-wa:hover { background: #1ebe5d; color: white; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.4); }
+.btn-wa:hover { background: #0c6b30; color: white; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,130,60,0.4); }
 .btn-sm { padding: 0.5rem 1.1rem; font-size: 0.82rem; }
 .btn-lg { padding: 1rem 2.5rem; font-size: 1rem; }
 
@@ -462,7 +468,7 @@ section { padding: var(--section-pad) 0; }
   --text-secondary: #c8c4bc;
   --text-muted: #8a8a82;
   --yellow: #CC8C00;
-  --orange: #D45500;
+  --orange: #E06012;
   --border: rgba(255,255,255,0.08);
   --bg-card: #1e261f;
 }
@@ -653,6 +659,12 @@ section { padding: var(--section-pad) 0; }
 .text-center { text-align: center; }
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
 
 .loading-screen { position: fixed; inset: 0; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; z-index: 99999; transition: opacity 0.5s ease; }
 .loading-screen.done { opacity: 0; pointer-events: none; }
