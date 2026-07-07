@@ -73,9 +73,9 @@
       <div style="width:100%;max-width:420px">
         <div class="hero-card" style="position:relative">
           <div class="hero-spin-badge">HOT<br>DEALS<br>LIVE</div>
-          <div class="prod-img" style="background:#e8e4dc;padding:0;height:280px">
+          <div class="prod-img" style="background:#e8e4dc;padding:0;height:auto;aspect-ratio:4/5">
             <img id="heroDealImg" src="images/specials/Kruit-Promo-Julie.jpg" alt="Somchem Powder Sale"
-                 style="width:100%;height:100%;object-fit:cover">
+                 style="width:100%;height:100%;object-fit:contain">
           </div>
           <div class="hero-card-body">
             <span class="hero-card-tag"><i class="fas fa-star"></i> Featured Special</span>
@@ -136,7 +136,7 @@
     </div>
     <div class="categories-grid reveal">
       <a href="firearms.html" class="cat-card cat-firearms">
-        <div class="cat-bg"><i class="fas fa-crosshairs"></i></div>
+        <img class="cat-photo" src="images/categories/firearms.jpg" alt="Scoped hunting rifle on a camouflage backpack" loading="lazy">
         <div class="cat-overlay"></div>
         <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
         <div class="cat-info">
@@ -145,7 +145,7 @@
         </div>
       </a>
       <a href="firearms.html#ammo" class="cat-card cat-ammo">
-        <div class="cat-bg"><i class="fas fa-bullseye"></i></div>
+        <img class="cat-photo" src="images/categories/ammunition.jpg" alt="Assorted rifle ammunition rounds" loading="lazy">
         <div class="cat-overlay"></div>
         <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
         <div class="cat-info">
@@ -154,7 +154,7 @@
         </div>
       </a>
       <a href="outdoor-gear.html" class="cat-card cat-outdoor">
-        <div class="cat-bg"><i class="fas fa-mountain"></i></div>
+        <img class="cat-photo" src="images/categories/camping.jpg" alt="Dome tent at sunset with mountains behind" loading="lazy">
         <div class="cat-overlay"></div>
         <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
         <div class="cat-info">
@@ -163,7 +163,7 @@
         </div>
       </a>
       <a href="fishing.html" class="cat-card cat-fishing">
-        <div class="cat-bg"><i class="fas fa-fish"></i></div>
+        <img class="cat-photo" src="images/categories/fishing.jpg" alt="Fly fisherman casting on a river" loading="lazy">
         <div class="cat-overlay"></div>
         <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
         <div class="cat-info">
@@ -172,7 +172,7 @@
         </div>
       </a>
       <a href="outdoor-gear.html#clothing" class="cat-card cat-clothing">
-        <div class="cat-bg"><i class="fas fa-shirt"></i></div>
+        <img class="cat-photo" src="images/categories/clothing.jpg" alt="Hunter wearing full camouflage clothing" loading="lazy">
         <div class="cat-overlay"></div>
         <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
         <div class="cat-info">
@@ -181,7 +181,7 @@
         </div>
       </a>
       <a href="outdoor-gear.html#knives" class="cat-card cat-knives">
-        <div class="cat-bg"><i class="fas fa-screwdriver-wrench"></i></div>
+        <img class="cat-photo" src="images/categories/knives.jpg" alt="Hunting knife with wooden handle in a tree stump" loading="lazy">
         <div class="cat-overlay"></div>
         <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
         <div class="cat-info">
@@ -273,7 +273,6 @@
         <ul class="svc-list">
           <li><i class="fas fa-check-circle"></i> Firearm licensing assistance &amp; renewals</li>
           <li><i class="fas fa-check-circle"></i> NARFO membership registration</li>
-          <li><i class="fas fa-check-circle"></i> NPO certification services</li>
           <li><i class="fas fa-check-circle"></i> 3, 6 &amp; 12 month payment plans</li>
           <li><i class="fas fa-check-circle"></i> Loyalty rewards program</li>
           <li><i class="fas fa-check-circle"></i> Trade-ins &amp; second-hand firearms</li>
@@ -318,7 +317,7 @@
       <div class="fin-opt">6 Months</div>
       <div class="fin-opt">12 Months</div>
     </div>
-    <a href="contact.html" class="btn btn-ghost" style="background:rgba(0,0,0,0.25);color:#000;border-color:#000">
+    <a href="contact.html" class="btn btn-ghost" style="background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.4)">
       <i class="fas fa-phone"></i> Ask Us About Finance
     </a>
   </div>
@@ -450,8 +449,8 @@
 
   grid.innerHTML = gridItems.map(item => `
     <div class="product-card" data-cat="${item.category}">
-      <div class="prod-img" style="background:#e8e4dc;padding:0">
-        <img src="images/specials/${item.file}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.opacity=0">
+      <div class="prod-img" style="background:#e8e4dc;padding:0;height:auto;aspect-ratio:4/5">
+        <img src="images/specials/${item.file}" alt="${item.title}" style="width:100%;height:100%;object-fit:contain" onerror="this.style.opacity=0">
       </div>
       <div class="prod-body">
         <div class="prod-cat">${catLabels[item.category] || item.category}${monthName ? ' · ' + monthName + ' Special' : ''}</div>

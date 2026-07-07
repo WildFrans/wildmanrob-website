@@ -110,7 +110,6 @@ const FOOTER_HTML = `
       <ul>
         <li><a href="services.html#licensing">Firearm Licensing</a></li>
         <li><a href="services.html#narfo">NARFO Membership</a></li>
-        <li><a href="services.html#npo">NPO Services</a></li>
         <li><a href="services.html#finance">Payment Plans</a></li>
         <li><a href="services.html#rewards">Rewards Program</a></li>
         <li><a href="services.html#gunsmith">Gunsmith</a></li>
