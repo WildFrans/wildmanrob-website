@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/components.js" defer></script>
+  <script src="js/firearms-data.js"></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -37,6 +38,16 @@
 <section style="background:var(--bg-primary)">
   <div class="container">
 
+    <!-- In Stock heading -->
+    <div class="specials-header-row reveal">
+      <div>
+        <div class="live-deal"><span class="live-dot"></span> In Stock Now</div>
+        <h2 class="sec-title" style="margin-top:0.75rem">Firearms <span class="grad-text">In Stock</span></h2>
+        <p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.5rem">Live stock list · Updated 8 July 2026 · Prices incl. VAT, E&amp;OE · One of each unless marked</p>
+      </div>
+      <a href="https://wa.me/27639370985?text=Hi%20Wildman%20Robertson!%20Please%20check%20stock%20on%20a%20firearm%20for%20me." target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Check Stock First</a>
+    </div>
+
     <!-- Filter -->
     <div class="filter-row reveal">
       <button class="filter-btn active" data-filter="all">All</button>
@@ -48,88 +59,8 @@
       <button class="filter-btn" data-filter="accessories">Accessories</button>
     </div>
 
-    <div class="products-grid">
-
-      <!-- Rifles -->
-      <div class="product-card reveal" data-cat="rifles">
-        <div class="prod-img" style="background:linear-gradient(135deg,#1a0505,#2d0a0a)">🔫</div>
-        <div class="prod-body">
-          <div class="prod-cat">Bolt-Action Rifle</div>
-          <h3>Musgrave Hunting Rifle</h3>
-          <p>South Africa's favourite bolt-action. Available in .243, .270, .308, 30-06 and more. Trusted by hunters across the country.</p>
-          <div class="prod-price"><span class="price-current">POA</span></div>
-          <div class="prod-actions">
-            <button class="btn btn-primary btn-sm" data-enquire="Musgrave Hunting Rifle" style="flex:1;justify-content:center"><i class="fab fa-whatsapp"></i> Enquire</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card reveal" data-cat="rifles">
-        <div class="prod-img" style="background:linear-gradient(135deg,#1a0505,#2d0a0a)">🎯</div>
-        <div class="prod-body">
-          <div class="prod-cat">Semi-Auto Rifle</div>
-          <h3>Vektor R4 / CR21</h3>
-          <p>South African-made semi-automatic rifle. Ideal for sport shooting, pest control and dedicated sports shooters.</p>
-          <div class="prod-price"><span class="price-current">POA</span></div>
-          <div class="prod-actions">
-            <button class="btn btn-primary btn-sm" data-enquire="Vektor Semi-Auto Rifle" style="flex:1;justify-content:center"><i class="fab fa-whatsapp"></i> Enquire</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card reveal" data-cat="rifles">
-        <div class="prod-img" style="background:linear-gradient(135deg,#1a0505,#2d0a0a)">🦁</div>
-        <div class="prod-body">
-          <div class="prod-cat">Big Game Rifle</div>
-          <h3>CZ 550 African</h3>
-          <p>Purpose-built for dangerous game. Available in .375 H&H, .458 Win Mag. Controlled-round feed for reliability in the field.</p>
-          <div class="prod-price"><span class="price-current">POA</span></div>
-          <div class="prod-actions">
-            <button class="btn btn-primary btn-sm" data-enquire="CZ 550 African Big Game Rifle" style="flex:1;justify-content:center"><i class="fab fa-whatsapp"></i> Enquire</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Handguns -->
-      <div class="product-card reveal" data-cat="handguns">
-        <div class="prod-img" style="background:linear-gradient(135deg,#1a0a00,#2d1500)">🔐</div>
-        <div class="prod-body">
-          <div class="prod-cat">Semi-Auto Pistol</div>
-          <h3>Glock 17 Gen 5</h3>
-          <p>The world's most trusted pistol. 9mm, 17-round capacity. Perfect for home defence, sport shooting and licensed carry.</p>
-          <div class="prod-price"><span class="price-current">POA</span></div>
-          <div class="prod-actions">
-            <button class="btn btn-primary btn-sm" data-enquire="Glock 17 Gen 5" style="flex:1;justify-content:center"><i class="fab fa-whatsapp"></i> Enquire</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card reveal" data-cat="handguns">
-        <div class="prod-img" style="background:linear-gradient(135deg,#1a0a00,#2d1500)">🛡️</div>
-        <div class="prod-body">
-          <div class="prod-cat">Revolver</div>
-          <h3>Smith &amp; Wesson .357 Mag</h3>
-          <p>Classic American revolver. Reliable, powerful and built to last a lifetime. Available in .357 Magnum and .38 Special.</p>
-          <div class="prod-price"><span class="price-current">POA</span></div>
-          <div class="prod-actions">
-            <button class="btn btn-primary btn-sm" data-enquire="Smith and Wesson Revolver" style="flex:1;justify-content:center"><i class="fab fa-whatsapp"></i> Enquire</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Shotguns -->
-      <div class="product-card reveal" data-cat="shotguns">
-        <div class="prod-img" style="background:linear-gradient(135deg,#051a05,#0d2d0d)">🦆</div>
-        <div class="prod-body">
-          <div class="prod-cat">Over/Under Shotgun</div>
-          <h3>Beretta A300 12 Gauge</h3>
-          <p>Italian craftsmanship for bird hunting and clay shooting. 12 gauge, gas-operated semi-automatic with excellent reliability.</p>
-          <div class="prod-price"><span class="price-current">POA</span></div>
-          <div class="prod-actions">
-            <button class="btn btn-primary btn-sm" data-enquire="Beretta A300 Shotgun" style="flex:1;justify-content:center"><i class="fab fa-whatsapp"></i> Enquire</button>
-          </div>
-        </div>
-      </div>
+    <div class="products-grid" id="stockGrid">
+      <!-- In-stock firearm cards injected from js/firearms-data.js (script at end of body) -->
 
       <!-- Air Rifles -->
       <div class="product-card reveal" data-cat="airrifles">
@@ -254,5 +185,46 @@
 </div>
 
 <div id="footer-slot"></div>
+
+<script>
+// ---- Render in-stock firearms from FIREARMS_STOCK (js/firearms-data.js) ---- //
+(function () {
+  if (typeof FIREARMS_STOCK === 'undefined' || !FIREARMS_STOCK.length) return;
+  var grid = document.getElementById('stockGrid');
+  if (!grid) return;
+
+  var fmtPrice = function (p) {
+    return 'R' + Math.round(p).toLocaleString('en-ZA').replace(/,/g, ' ');
+  };
+
+  var html = FIREARMS_STOCK.map(function (g) {
+    var enquire = (g.name + ' ' + g.calibre).replace(/"/g, '');
+    var imgArea = g.img
+      ? '<div class="prod-img" style="background:#fff;padding:1rem">' +
+          '<img src="' + g.img + '" alt="' + g.name + ' ' + g.calibre + '" loading="lazy" style="width:100%;height:100%;object-fit:contain">' +
+          (g.qty > 1 ? '<span class="prod-badge">' + g.qty + ' IN STOCK</span>' : '') +
+        '</div>'
+      : '<div class="prod-img" style="background:var(--bg-secondary);flex-direction:column;gap:0.4rem;font-size:1rem">' +
+          '<i class="fas fa-crosshairs" style="font-size:2rem;color:var(--border)"></i>' +
+          '<span style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px">Photo on request</span>' +
+          (g.qty > 1 ? '<span class="prod-badge">' + g.qty + ' IN STOCK</span>' : '') +
+        '</div>';
+    return '<div class="product-card reveal" data-cat="' + g.cat + '">' +
+      imgArea +
+      '<div class="prod-body">' +
+        '<div class="prod-cat">' + g.type + '</div>' +
+        '<h3>' + g.name + ' <span style="color:var(--text-muted);font-weight:600">· ' + g.calibre + '</span></h3>' +
+        (g.detail ? '<p>' + g.detail + '</p>' : '<p></p>') +
+        '<div class="prod-price"><span class="price-current">' + fmtPrice(g.price) + '</span></div>' +
+        '<div class="prod-actions">' +
+          '<button class="btn btn-primary btn-sm" data-enquire="' + enquire + '" style="flex:1;justify-content:center"><i class="fab fa-whatsapp"></i> Enquire</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  grid.insertAdjacentHTML('afterbegin', html);
+})();
+</script>
 </body>
 </html>
