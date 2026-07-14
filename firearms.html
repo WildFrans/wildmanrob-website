@@ -199,6 +199,7 @@
 
   var html = FIREARMS_STOCK.map(function (g) {
     var enquire = (g.name + ' ' + g.calibre).replace(/"/g, '');
+    var detailUrl = 'firearm.html?id=' + encodeURIComponent(g.id);
     var imgArea = g.img
       ? '<div class="prod-img" style="background:#fff;padding:1rem">' +
           '<img src="' + g.img + '" alt="' + g.name + ' ' + g.calibre + '" loading="lazy" style="width:100%;height:100%;object-fit:contain">' +
@@ -210,13 +211,14 @@
           (g.qty > 1 ? '<span class="prod-badge">' + g.qty + ' IN STOCK</span>' : '') +
         '</div>';
     return '<div class="product-card reveal" data-cat="' + g.cat + '">' +
-      imgArea +
+      '<a href="' + detailUrl + '" class="prod-link">' + imgArea + '</a>' +
       '<div class="prod-body">' +
         '<div class="prod-cat">' + g.type + '</div>' +
-        '<h3>' + g.name + ' <span style="color:var(--text-muted);font-weight:600">· ' + g.calibre + '</span></h3>' +
+        '<h3><a href="' + detailUrl + '" style="color:inherit">' + g.name + ' <span style="color:var(--text-muted);font-weight:600">· ' + g.calibre + '</span></a></h3>' +
         (g.detail ? '<p>' + g.detail + '</p>' : '<p></p>') +
         '<div class="prod-price"><span class="price-current">' + fmtPrice(g.price) + '</span></div>' +
         '<div class="prod-actions">' +
+          '<a href="' + detailUrl + '" class="btn btn-outline btn-sm" style="flex:1;justify-content:center"><i class="fas fa-circle-info"></i> Details</a>' +
           '<button class="btn btn-primary btn-sm" data-enquire="' + enquire + '" style="flex:1;justify-content:center"><i class="fab fa-whatsapp"></i> Enquire</button>' +
         '</div>' +
       '</div>' +

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Firearm Details | Wildman Hunting & Outdoor Robertson</title>
+  <meta name="description" id="pageDesc" content="Firearm details, features and pricing at Wildman Hunting & Outdoor Robertson.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Rubik:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/components.js" defer></script>
+  <script src="js/firearms-data.js"></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<div id="nav-slot"></div>
+
+<div class="page-hero" style="padding:1.5rem 0">
+  <div class="container">
+    <div class="breadcrumb" id="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><a href="firearms.html">Firearms</a><i class="fas fa-chevron-right"></i><span id="breadcrumbName">Loading…</span></div>
+  </div>
+</div>
+
+<section style="background:var(--bg-primary);padding:2.5rem 0">
+  <div class="container">
+    <div id="fdRoot">
+      <p style="text-align:center;color:var(--text-muted);padding:3rem 0">Loading firearm details…</p>
+    </div>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+
+<script>
+(function () {
+  if (typeof FIREARMS_STOCK === 'undefined') return;
+
+  var params = new URLSearchParams(window.location.search);
+  var id = params.get('id');
+  var item = FIREARMS_STOCK.find(function (f) { return f.id === id; });
+  var root = document.getElementById('fdRoot');
+
+  if (!item) {
+    root.innerHTML = '<div style="text-align:center;padding:3rem 0">' +
+      '<h2 style="margin-bottom:1rem">We couldn\'t find that firearm</h2>' +
+      '<p style="color:var(--text-muted);margin-bottom:1.5rem">It may have sold or the link is out of date.</p>' +
+      '<a href="firearms.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to Firearms In Stock</a>' +
+      '</div>';
+    return;
+  }
+
+  var fmtPrice = function (p) { return 'R' + Math.round(p).toLocaleString('en-ZA').replace(/,/g, ' '); };
+  var fullName = item.name + ' (' + item.calibre + ')';
+  document.title = item.name + ' — ' + item.calibre + ' | Wildman Hunting & Outdoor Robertson';
+  document.getElementById('pageDesc').setAttribute('content', item.name + ' in ' + item.calibre + ' — price, features and availability at Wildman Robertson. ' + (item.detail || ''));
+  document.getElementById('breadcrumbName').textContent = item.name;
+
+  var licCopy = {
+    hunt: { label: 'Section 15 / 16 — Hunting & Sport Shooting', text: 'Hunting rifles like this one are typically licensed under Section 15 (occasional use) or Section 16 (dedicated hunter/sport shooter status via an accredited association such as NARFO). We register NARFO membership in-store and can help you pick the right section for how you\'ll actually use the firearm.' },
+    sd: { label: 'Section 13 — Self-Defence', text: 'Handguns purchased primarily for self-defence are usually licensed under Section 13, limited to one firearm of this type per applicant. If you\'re also a sport shooter, Section 15/16 may suit you better — we\'ll help you motivate for the right one.' },
+    sport: { label: 'Section 15 / 16 — Sport Shooting', text: 'Sport and precision rifles like this one are usually licensed under Section 15 (occasional use) or Section 16 (dedicated status through an accredited shooting association). We can help you register with an accredited body and prepare your motivation.' }
+  };
+  var lic = licCopy[item.lic] || licCopy.hunt;
+
+  var imgHtml = item.img
+    ? '<img class="fd-gallery-img" src="' + item.img + '" alt="' + fullName + '">'
+    : '<div class="fd-gallery-placeholder"><i class="fas fa-camera"></i><span>Photo on request — WhatsApp us and we\'ll send one straight over</span></div>';
+
+  var featuresHtml = (item.features || []).map(function (f) {
+    return '<li><i class="fas fa-check-circle"></i>' + f + '</li>';
+  }).join('');
+
+  var marketHtml = item.market
+    ? '<div class="fd-market-box"><i class="fas fa-comment-dots" style="color:var(--red);margin-right:0.4rem"></i>' + item.market + '<div class="fd-market-note">Our team\'s honest read on this model\'s reputation, based on what owners, reviewers and the shooting community consistently say about it — not a customer review of this specific unit.</div></div>'
+    : '';
+
+  var waMsg = encodeURIComponent('Hi Wildman Robertson! I\'m interested in the ' + fullName + ' — is it still in stock?');
+
+  root.innerHTML =
+    '<div class="fd-layout">' +
+      '<div class="fd-gallery">' + imgHtml + '</div>' +
+      '<div>' +
+        '<div class="fd-type">' + item.type + '</div>' +
+        '<h1 class="fd-title">' + item.name + '</h1>' +
+        '<div class="fd-calibre">' + item.calibre + (item.detail ? ' · ' + item.detail : '') + '</div>' +
+        '<div class="fd-price-row">' +
+          '<span class="fd-price">' + fmtPrice(item.price) + '</span>' +
+          '<span class="fd-stock-badge"><span class="dot"></span>' + (item.qty > 1 ? item.qty + ' units in stock' : 'In stock') + '</span>' +
+        '</div>' +
+        '<div class="fd-actions">' +
+          '<a href="https://wa.me/27639370985?text=' + waMsg + '" target="_blank" rel="noopener" class="btn btn-wa btn-lg"><i class="fab fa-whatsapp"></i> Reserve / Enquire</a>' +
+          '<a href="tel:0230360000" class="btn btn-outline btn-lg"><i class="fas fa-phone"></i> Call the Shop</a>' +
+        '</div>' +
+        (featuresHtml ? '<div class="fd-section"><h2><i class="fas fa-list-check"></i> Features</h2><ul class="fd-features">' + featuresHtml + '</ul></div>' : '') +
+        (marketHtml ? '<div class="fd-section"><h2><i class="fas fa-users"></i> What the Market Says</h2>' + marketHtml + '</div>' : '') +
+        '<div class="fd-section"><h2><i class="fas fa-file-signature"></i> Licensing for This Firearm</h2>' +
+          '<div class="fd-lic-box"><p><strong>' + lic.label + '</strong></p><p>' + lic.text + '</p>' +
+          '<p style="margin-bottom:0"><a href="blog-firearm-licence-guide.html">Read our full licensing guide</a> &nbsp;·&nbsp; <a href="services.html">See our licensing services</a></p></div>' +
+        '</div>' +
+        '<div class="fd-section"><h2><i class="fas fa-credit-card"></i> Financing</h2>' +
+          '<div class="fd-fin-note"><i class="fas fa-calendar-check"></i> Spread this purchase over 3, 6 or 12 months — ask us in-store or <a href="contact.html" style="color:var(--red);font-weight:600">contact us</a> for details.</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+
+  /* Related firearms — same category, excluding this one */
+  var related = FIREARMS_STOCK.filter(function (f) { return f.cat === item.cat && f.id !== item.id; });
+  for (var i = related.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = related[i]; related[i] = related[j]; related[j] = t;
+  }
+  related = related.slice(0, 4);
+
+  if (related.length) {
+    var relCards = related.map(function (r) {
+      var rImg = r.img
+        ? '<img src="' + r.img + '" alt="' + r.name + '" loading="lazy" style="width:100%;height:100%;object-fit:contain">'
+        : '<i class="fas fa-crosshairs" style="font-size:2rem;color:var(--border)"></i>';
+      return '<a href="firearm.html?id=' + r.id + '" class="prod-link">' +
+        '<div class="product-card">' +
+          '<div class="prod-img" style="background:#fff;padding:1rem">' + rImg + '</div>' +
+          '<div class="prod-body">' +
+            '<div class="prod-cat">' + r.type + '</div>' +
+            '<h3 style="font-size:0.95rem">' + r.name + '</h3>' +
+            '<div class="prod-price" style="margin-top:0.5rem"><span class="price-current" style="font-size:1.1rem">' + fmtPrice(r.price) + '</span></div>' +
+          '</div>' +
+        '</div>' +
+      '</a>';
+    }).join('');
+
+    var relatedSection = document.createElement('section');
+    relatedSection.style.background = 'var(--bg-secondary)';
+    relatedSection.innerHTML = '<div class="container">' +
+      '<div class="sec-header"><h2 class="sec-title">You Might Also <span class="grad-text">Like</span></h2></div>' +
+      '<div class="fd-related-grid">' + relCards + '</div>' +
+    '</div>';
+    document.body.insertBefore(relatedSection, document.getElementById('footer-slot'));
+  }
+})();
+</script>
+</body>
+</html>

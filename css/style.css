@@ -635,6 +635,45 @@ section { padding: var(--section-pad) 0; }
 .svc-tag { background: rgba(200,54,35,0.10); color: var(--orange); padding: 0.2rem 0.65rem; border-radius: 25px; font-size: 0.72rem; font-weight: 600; }
 
 /* ============================================
+   FIREARM DETAIL PAGE
+   ============================================ */
+.fd-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.fd-gallery { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; position: sticky; top: calc(var(--nav-height) + 1.5rem); }
+.fd-gallery-img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #fff; padding: 2rem; }
+.fd-gallery-placeholder { width: 100%; aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; background: var(--bg-secondary); color: var(--text-muted); }
+.fd-gallery-placeholder i { font-size: 3rem; color: var(--border); }
+.fd-type { color: var(--orange); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+.fd-title { font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 0.25rem; }
+.fd-calibre { color: var(--text-muted); font-weight: 600; font-size: 1.1rem; }
+.fd-price-row { display: flex; align-items: center; gap: 1rem; margin: 1.25rem 0; flex-wrap: wrap; }
+.fd-price { font-size: 2rem; font-weight: 900; color: var(--red); }
+.fd-stock-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(46,125,50,0.1); color: var(--green); border: 1px solid rgba(46,125,50,0.3); padding: 0.3rem 0.8rem; border-radius: 25px; font-size: 0.8rem; font-weight: 700; }
+.fd-stock-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+.fd-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.fd-section { margin-top: 2.25rem; }
+.fd-section h2 { font-size: 1.2rem; margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
+.fd-section h2 i { color: var(--red); font-size: 1rem; }
+.fd-features { display: grid; gap: 0.6rem; }
+.fd-features li { display: flex; align-items: flex-start; gap: 0.6rem; color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5; }
+.fd-features li i { color: var(--red); margin-top: 3px; flex-shrink: 0; }
+.fd-market-box { background: var(--bg-secondary); border-left: 3px solid var(--red); border-radius: var(--radius-sm); padding: 1.25rem 1.5rem; color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; }
+.fd-market-note { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.6rem; font-style: italic; }
+.fd-lic-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; }
+.fd-lic-box p { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; margin-bottom: 0.5rem; }
+.fd-lic-box a { color: var(--red); font-weight: 600; }
+.fd-fin-note { display: flex; align-items: center; gap: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-md); padding: 1rem 1.25rem; font-size: 0.88rem; color: var(--text-secondary); }
+.fd-fin-note i { color: var(--red); font-size: 1.2rem; }
+.fd-related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
+.prod-link { display: block; }
+.prod-link:hover .prod-img img { transform: scale(1.04); }
+.prod-img { overflow: hidden; }
+.prod-img img { transition: transform 0.3s ease; }
+@media (max-width: 900px) {
+  .fd-layout { grid-template-columns: 1fr; }
+  .fd-gallery { position: static; }
+}
+
+/* ============================================
    BLOG POST PAGES
    ============================================ */
 .post-hero-img { width: 100%; max-height: 440px; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--border); }
