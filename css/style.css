@@ -233,8 +233,9 @@ section { padding: var(--section-pad) 0; }
 }
 .hero-title .grad {
   /* Owner requirement (fix doc 070726): the WILDMAN word must match
-     the logo's yellow→orange→red gradient exactly. */
-  background: linear-gradient(to bottom, #FFD700 0%, #FF6600 55%, #CC0000 100%);
+     the logo's yellow→orange→red gradient exactly. Stops sampled from
+     the logo artwork: #FFF200 / #FF5000 / #E30613 (7 Oct 2026). */
+  background: linear-gradient(to bottom, #FFF200 0%, #FF5000 50%, #E30613 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -753,3 +754,75 @@ section { padding: var(--section-pad) 0; }
 .loader-bar { width: 200px; height: 3px; background: var(--border); border-radius: 3px; overflow: hidden; }
 .loader-bar::after { content: ''; display: block; height: 100%; background: var(--yellow); animation: loadFill 1s ease forwards; }
 @keyframes loadFill { from { width: 0; } to { width: 100%; } }
+
+
+/* ============================================
+   NOTICE BAR · DEPARTMENT CARDS · DARK BAND
+   (added in the 7 Oct 2026 clean-up)
+   ============================================ */
+.notice-bar { background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 0.9rem 0; }
+.notice-bar .container { display: flex; align-items: center; gap: 0.9rem; }
+.notice-bar i { color: var(--red); font-size: 1.1rem; flex-shrink: 0; }
+.notice-bar p { color: var(--text-secondary); font-size: 0.88rem; margin: 0; }
+.notice-bar p strong { color: var(--text-primary); }
+.notice-bar a { color: var(--red); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+.dept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+.dept-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-md); overflow: hidden;
+  display: flex; flex-direction: column; transition: var(--transition);
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+.dept-card:hover { transform: translateY(-5px); border-color: var(--red); box-shadow: 0 10px 30px rgba(0,0,0,0.10); }
+.dept-photo { aspect-ratio: 3/2; overflow: hidden; background: var(--bg-secondary); }
+.dept-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.dept-card:hover .dept-photo img { transform: scale(1.05); }
+.dept-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+.dept-body h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+.dept-body p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; }
+.dept-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+.dept-tags span {
+  font-size: 0.72rem; font-weight: 600; color: var(--text-secondary);
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  padding: 0.2rem 0.65rem; border-radius: 25px;
+}
+.dept-body .btn { margin-top: auto; align-self: flex-start; }
+
+.band-dark {
+  background: #000; padding: 2.25rem 0;
+  --text-primary: #FFFFFF; --text-secondary: #D6D6D6; --text-muted: #9A9A9A;
+}
+.band-dark .band-inner { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.band-dark .band-icon {
+  width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(252,205,4,0.12); color: var(--brand-gold); font-size: 1.7rem;
+}
+.band-dark h3 { font-size: 1.25rem; margin-bottom: 0.35rem; color: #fff; }
+.band-dark p { color: var(--text-secondary); font-size: 0.92rem; max-width: 640px; }
+.band-dark .btn { margin-left: auto; white-space: nowrap; }
+a.feature-card { display: block; color: inherit; }
+
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; counter-reset: step; }
+.step-card { position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem 1.5rem 1.75rem; }
+.step-card::before {
+  counter-increment: step; content: counter(step);
+  position: absolute; top: -14px; left: 1.5rem;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: #000; color: var(--brand-gold); font-weight: 800; font-size: 0.9rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.step-card .feat-icon { margin-bottom: 1rem; }
+.step-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.step-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.6; }
+
+@media (max-width: 640px) {
+  .band-dark .btn { margin-left: 0; }
+  .notice-bar .container { align-items: flex-start; }
+}
+
+/* Icon colouring now that emoji are replaced with Font Awesome */
+.svc-card .ic, .val-card .ic, .svc-big-icon { color: var(--red); }
+.about-badge-block .year i { font-size: 0.8em; }
+.nav-links a .fa-fire, .mobile-menu a .fa-fire { margin-right: 0.25rem; }
