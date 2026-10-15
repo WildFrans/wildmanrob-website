@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="pageTitle">Firearm Details | Wildman Hunting & Outdoor Robertson</title>
-  <meta name="description" id="pageDesc" content="Firearm details, features and pricing at Wildman Hunting & Outdoor Robertson.">
+  <title id="pageTitle">Firearm Details | Boland Hunting & Outdoor Robertson</title>
+  <meta name="description" id="pageDesc" content="Firearm details, features and pricing at Boland Hunting & Outdoor Robertson.">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,8 +55,8 @@
 
   var fmtPrice = function (p) { return 'R' + Math.round(p).toLocaleString('en-ZA').replace(/,/g, ' '); };
   var fullName = item.name + ' (' + item.calibre + ')';
-  document.title = item.name + ' — ' + item.calibre + ' | Wildman Hunting & Outdoor Robertson';
-  document.getElementById('pageDesc').setAttribute('content', item.name + ' in ' + item.calibre + ' — price, features and availability at Wildman Robertson. ' + (item.detail || ''));
+  document.title = item.name + ' — ' + item.calibre + ' | Boland Hunting & Outdoor Robertson';
+  document.getElementById('pageDesc').setAttribute('content', item.name + ' in ' + item.calibre + ' — price, features and availability at Boland Hunting & Outdoor. ' + (item.detail || ''));
   document.getElementById('breadcrumbName').textContent = item.name;
 
   var licCopy = {
@@ -78,7 +78,7 @@
     ? '<div class="fd-market-box"><i class="fas fa-comment-dots" style="color:var(--red);margin-right:0.4rem"></i>' + item.market + '<div class="fd-market-note">Our team\'s honest read on this model\'s reputation, based on what owners, reviewers and the shooting community consistently say about it — not a customer review of this specific unit.</div></div>'
     : '';
 
-  var waMsg = encodeURIComponent('Hi Wildman Robertson! I\'m interested in the ' + fullName + ' — is it still in stock?');
+  var waMsg = encodeURIComponent('Hi Boland Hunting & Outdoor! I\'m interested in the ' + fullName + ' — is it still in stock?');
 
   root.innerHTML =
     '<div class="fd-layout">' +
@@ -92,8 +92,8 @@
           '<span class="fd-stock-badge"><span class="dot"></span>' + (item.qty > 1 ? item.qty + ' units in stock' : 'In stock') + '</span>' +
         '</div>' +
         '<div class="fd-actions">' +
-          '<a href="https://wa.me/27639370985?text=' + waMsg + '" target="_blank" rel="noopener" class="btn btn-wa btn-lg"><i class="fab fa-whatsapp"></i> Reserve / Enquire</a>' +
-          '<a href="tel:0230360000" class="btn btn-outline btn-lg"><i class="fas fa-phone"></i> Call the Shop</a>' +
+          '<a href="https://wa.me/27820000000?text=' + waMsg + '" target="_blank" rel="noopener" class="btn btn-wa btn-lg"><i class="fab fa-whatsapp"></i> Reserve / Enquire</a>' +
+          '<a href="tel:0230000000" class="btn btn-outline btn-lg"><i class="fas fa-phone"></i> Call the Shop</a>' +
         '</div>' +
         (featuresHtml ? '<div class="fd-section"><h2><i class="fas fa-list-check"></i> Features</h2><ul class="fd-features">' + featuresHtml + '</ul></div>' : '') +
         (marketHtml ? '<div class="fd-section"><h2><i class="fas fa-users"></i> What the Market Says</h2>' + marketHtml + '</div>' : '') +
