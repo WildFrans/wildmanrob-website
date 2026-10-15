@@ -1,5 +1,5 @@
 /* ============================================
-   WILDMAN HUNTING & OUTDOOR ROBERTSON
+   BOLAND HUNTING & OUTDOOR ROBERTSON
    Main JavaScript
    ============================================ */
 
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const email = form.querySelector('[name="email"]').value;
       const subject = form.querySelector('[name="subject"]') ? form.querySelector('[name="subject"]').value : 'Website Enquiry';
       const message = form.querySelector('[name="message"]').value;
-      const mailto = `mailto:Info@wildmanrob.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+      const mailto = `mailto:info@bolandhunting.example?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
 
       setTimeout(() => {
         window.location.href = mailto;
@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('[data-enquire]').forEach(btn => {
     btn.addEventListener('click', function () {
       const product = this.dataset.enquire;
-      const msg = encodeURIComponent(`Hi Wildman Robertson! I'm interested in: ${product}. Please can you give me more info?`);
-      window.open(`https://wa.me/27639370985?text=${msg}`, '_blank', 'noopener');
+      const msg = encodeURIComponent(`Hi Boland Hunting & Outdoor! I'm interested in: ${product}. Please can you give me more info?`);
+      window.open(`https://wa.me/27820000000?text=${msg}`, '_blank', 'noopener');
     });
   });
 

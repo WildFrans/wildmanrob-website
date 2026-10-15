@@ -1,23 +1,23 @@
 /* ============================================
-   WILDMAN HUNTING & OUTDOOR ROBERTSON
+   BOLAND HUNTING & OUTDOOR ROBERTSON
    Shared Components: Nav + Footer
    ============================================ */
 
-const WA_NUMBER = '27639370985';
-const WA_MESSAGE = encodeURIComponent('Hi Wildman Robertson! I found you online and would like to find out more.');
+const WA_NUMBER = '27820000000';
+const WA_MESSAGE = encodeURIComponent('Hi Boland Hunting & Outdoor! I found you online and would like to find out more.');
 const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 
 const NAV_HTML = `
 <div class="announcement-bar">
-  <i class="fas fa-fire" style="color:var(--brand-gold)"></i> In-store SPECIALS every week! Visit us at 8 Voortrekker Ave, Robertson &nbsp;|&nbsp;
-  <a href="tel:0230360000">023 036 0000</a>
+  <i class="fas fa-fire" style="color:var(--brand-gold)"></i> In-store SPECIALS every week! Visit us at 1 Main Road, Robertson &nbsp;|&nbsp;
+  <a href="tel:0230000000">023 000 0000</a>
 </div>
 <nav class="navbar" id="mainNav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Wildman Robertson Home">
-      <img src="images/logo-dark.png" alt="Wildman Hunting & Outdoor Robertson" width="266" height="110" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <a href="index.html" class="nav-logo" aria-label="Boland Hunting & Outdoor Home">
+      <img src="images/logo-dark.png" alt="Boland Hunting & Outdoor Robertson" width="341" height="110" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="nav-logo-fallback" style="display:none">
-        <span class="brand">WILDMAN</span>
+        <span class="brand">BOLAND</span>
         <span class="loc">Robertson</span>
       </div>
     </a>
@@ -38,7 +38,7 @@ const NAV_HTML = `
     <div class="nav-right">
       <div class="nav-phone-block">
         <span class="label">Call Us</span>
-        <a href="tel:0230360000">023 036 0000</a>
+        <a href="tel:0230000000">023 000 0000</a>
       </div>
       <a href="${WA_LINK}" target="_blank" rel="noopener" class="btn-wa-nav">
         <i class="fab fa-whatsapp"></i>
@@ -64,9 +64,9 @@ const NAV_HTML = `
   <a href="contact.html">Contact</a>
   <div class="mobile-contact-info">
     <p>Get in touch</p>
-    <a href="tel:0230360000"><i class="fas fa-phone"></i> 023 036 0000</a>
-    <a href="${WA_LINK}" target="_blank"><i class="fab fa-whatsapp"></i> 063 937 0985</a>
-    <a href="mailto:Info@wildmanrob.co.za"><i class="fas fa-envelope"></i> Info@wildmanrob.co.za</a>
+    <a href="tel:0230000000"><i class="fas fa-phone"></i> 023 000 0000</a>
+    <a href="${WA_LINK}" target="_blank"><i class="fab fa-whatsapp"></i> 082 000 0000</a>
+    <a href="mailto:info@bolandhunting.example"><i class="fas fa-envelope"></i> info@bolandhunting.example</a>
   </div>
 </div>
 
@@ -80,13 +80,13 @@ const FOOTER_HTML = `
 <footer class="footer">
   <div class="footer-grid">
     <div>
-      <img src="images/logo-white.png" alt="Wildman Hunting & Outdoor Robertson" class="footer-logo" onerror="this.outerHTML='<div style=&quot;font-size:1.4rem;font-weight:900;background:linear-gradient(to bottom,#FFF200,#FF5000,#E30613);-webkit-background-clip:text;-webkit-text-fill-color:transparent&quot;>WILDMAN ROBERTSON</div>'">
+      <img src="images/logo-white.png" alt="Boland Hunting & Outdoor Robertson" class="footer-logo" onerror="this.outerHTML='<div style=&quot;font-size:1.4rem;font-weight:900;background:linear-gradient(to bottom,#FFF200,#FF5000,#E30613);-webkit-background-clip:text;-webkit-text-fill-color:transparent&quot;>BOLAND ROBERTSON</div>'">
       <p class="footer-brand-desc">Robertson's premier hunting and outdoor shop. Your trusted partner for firearms, ammunition, fishing gear, outdoor equipment and expert advice in the Breede River Valley.</p>
       <div class="footer-socials">
-        <a href="https://www.facebook.com/RobertsonWildman" target="_blank" rel="noopener" class="soc-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/wildmanrob" target="_blank" rel="noopener" class="soc-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="soc-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="soc-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="${WA_LINK}" target="_blank" rel="noopener" class="soc-btn" title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://chat.whatsapp.com/IIXR1mRwYDpJ2DSXqLEUa3" target="_blank" rel="noopener" class="soc-btn" title="Join our WhatsApp Group" style="font-size:0.7rem;font-weight:700;width:auto;padding:0 0.6rem;border-radius:20px">GROUP</a>
+        <a href="https://wa.me/27820000000" target="_blank" rel="noopener" class="soc-btn" title="Join our WhatsApp Group" style="font-size:0.7rem;font-weight:700;width:auto;padding:0 0.6rem;border-radius:20px">GROUP</a>
       </div>
     </div>
 
@@ -121,19 +121,19 @@ const FOOTER_HTML = `
       <h4>Contact Us</h4>
       <div class="footer-contact-row">
         <i class="fas fa-map-marker-alt"></i>
-        <span>8 Voortrekker Ave, Robertson, 6705</span>
+        <span>1 Main Road, Robertson, 6705</span>
       </div>
       <div class="footer-contact-row">
         <i class="fas fa-phone"></i>
-        <a href="tel:0230360000">023 036 0000</a>
+        <a href="tel:0230000000">023 000 0000</a>
       </div>
       <div class="footer-contact-row">
         <i class="fab fa-whatsapp"></i>
-        <a href="${WA_LINK}" target="_blank">063 937 0985</a>
+        <a href="${WA_LINK}" target="_blank">082 000 0000</a>
       </div>
       <div class="footer-contact-row">
         <i class="fas fa-envelope"></i>
-        <a href="mailto:Info@wildmanrob.co.za">Info@wildmanrob.co.za</a>
+        <a href="mailto:info@bolandhunting.example">info@bolandhunting.example</a>
       </div>
       <div class="hours-table" style="margin-top:1rem">
         <div class="hour-row"><span class="day">Mon – Fri</span><span class="time">09:00 – 17:00</span></div>
@@ -144,7 +144,7 @@ const FOOTER_HTML = `
   </div>
 
   <div class="footer-bottom">
-    <p>© ${new Date().getFullYear()} Wildman Hunting & Outdoor Robertson. All rights reserved.</p>
+    <p>© ${new Date().getFullYear()} Boland Hunting & Outdoor Robertson. All rights reserved.</p>
   </div>
 </footer>
 `;

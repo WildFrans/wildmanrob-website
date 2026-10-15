@@ -1,5 +1,5 @@
 /* ============================================================
-   WILDMAN ROBERTSON — FIREARMS IN STOCK
+   BOLAND ROBERTSON — FIREARMS IN STOCK
    Generated from Stock/FIREARMS/Firearm Verification.xlsx
    Showcase set: only models with a product photo are listed
    (50 models). Entries without a photo were removed 7 Oct 2026;

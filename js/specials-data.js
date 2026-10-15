@@ -1,5 +1,5 @@
 /* ============================================================
-   WILDMAN ROBERTSON — CURRENT SPECIALS DATA
+   BOLAND ROBERTSON — CURRENT SPECIALS DATA
    Last updated: 15 August 2026 (Augustus)
    ============================================================ */
 
