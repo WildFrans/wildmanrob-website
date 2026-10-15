@@ -1,12 +1,12 @@
 /* ============================================
-   WILDMAN HUNTING & OUTDOOR ROBERTSON
+   BOLAND HUNTING & OUTDOOR ROBERTSON
    Main Stylesheet
    ============================================ */
 
 :root {
   /* Franchise brand accent — matches the reference franchise site
-     (wildmangeorge.co.za). UI accents are this single red-orange plus
-     the brand gold below. Per owner fix-doc 070726: the hero WILDMAN
+     (reference site). UI accents are this single red-orange plus
+     the brand gold below. Per owner fix-doc 070726: the hero BOLAND
      word carries the logo gradient; brand gold is used for headline
      accents but ONLY on dark/black bands (it fails contrast on white). */
   --brand-gold: #FCCD04;
@@ -232,7 +232,7 @@ section { padding: var(--section-pad) 0; }
   font-weight: 900; line-height: 1.05; letter-spacing: -1px; margin-bottom: 0.5rem;
 }
 .hero-title .grad {
-  /* Owner requirement (fix doc 070726): the WILDMAN word must match
+  /* Owner requirement (fix doc 070726): the BOLAND word must match
      the logo's yellow→orange→red gradient exactly. Stops sampled from
      the logo artwork: #FFF200 / #FF5000 / #E30613 (7 Oct 2026). */
   background: linear-gradient(to bottom, #FFF200 0%, #FF5000 50%, #E30613 100%);
