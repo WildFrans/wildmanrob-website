@@ -91,7 +91,7 @@ section { padding: var(--section-pad) 0; }
 }
 
 .nav-logo { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
-.nav-logo img { height: 110px; width: auto; }
+.nav-logo img { height: 78px; width: auto; }
 .nav-logo-fallback { display: flex; flex-direction: column; line-height: 1.1; }
 .nav-logo-fallback .brand {
   font-size: 1.4rem; font-weight: 900; letter-spacing: 2px;
@@ -826,3 +826,12 @@ a.feature-card { display: block; color: inherit; }
 .svc-card .ic, .val-card .ic, .svc-big-icon { color: var(--red); }
 .about-badge-block .year i { font-size: 0.8em; }
 .nav-links a .fa-fire, .mobile-menu a .fa-fire { margin-right: 0.25rem; }
+
+/* Boland rebrand: wider wordmark logo, keep the header inside the container */
+@media (min-width: 1025px) and (max-width: 1400px) {
+  .nav-logo img { height: 64px; }
+  .nav-links a { font-size: 0.76rem; padding: 0.45rem 0.4rem; }
+}
+@media (max-width: 640px) {
+  .nav-logo img { height: 56px; }
+}
