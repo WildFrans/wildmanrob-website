@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Current Specials | Boland Hunting & Outdoor Robertson</title>
   <meta name="description" content="This month's specials at Boland Hunting & Outdoor Robertson — firearms, optics, ammunition and outdoor gear deals. Robertson, Western Cape.">
@@ -227,7 +228,7 @@
         <p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.5rem">Updated: <span id="specials-updated">—</span> · <span id="specials-count">—</span> deals this month</p>
       </div>
       <div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap">
-        <a href="https://wa.me/27820000000?text=Hi%20Boland%20Hunting%20%26%20Outdoor!%20Please%20send%20me%20the%20full%20specials%20list." target="_blank" class="btn btn-wa">
+        <a href="https://wa.me/27727535744?text=Hi%20Boland%20Hunting%20%26%20Outdoor!%20Please%20send%20me%20the%20full%20specials%20list." target="_blank" class="btn btn-wa">
           <i class="fab fa-whatsapp"></i> Get Full Specials on WhatsApp
         </a>
       </div>
@@ -253,7 +254,7 @@
     <div class="specials-empty" id="specials-empty">
       <div style="font-size:3rem;margin-bottom:1rem"><i class="fas fa-magnifying-glass"></i></div>
       <h3>No deals in this category</h3>
-      <p style="margin-top:0.5rem">Try another filter or <a href="https://wa.me/27820000000" target="_blank" style="color:var(--orange)">ask us on WhatsApp</a> for availability.</p>
+      <p style="margin-top:0.5rem">Try another filter or <a href="https://wa.me/27727535744" target="_blank" style="color:var(--orange)">ask us on WhatsApp</a> for availability.</p>
     </div>
 
     <!-- Bottom CTA -->
@@ -261,8 +262,8 @@
       <h3 style="font-size:1.5rem;margin-bottom:0.75rem">Don't see what you're looking for?</h3>
       <p style="color:var(--text-muted);margin-bottom:1.75rem">We have more specials in-store and new stock arriving regularly. Contact us and we'll let you know what's available.</p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-        <a href="https://wa.me/27820000000?text=Hi%20Boland%20Hunting%20%26%20Outdoor!%20What%20specials%20do%20you%20have%20available?" target="_blank" class="btn btn-wa btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp for More Deals</a>
-        <a href="tel:0230000000" class="btn btn-outline btn-lg"><i class="fas fa-phone"></i> 023 000 0000</a>
+        <a href="https://wa.me/27727535744?text=Hi%20Boland%20Hunting%20%26%20Outdoor!%20What%20specials%20do%20you%20have%20available?" target="_blank" class="btn btn-wa btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp for More Deals</a>
+        <a href="tel:+27727535744" class="btn btn-outline btn-lg"><i class="fas fa-phone"></i> 072 753 5744</a>
       </div>
     </div>
   </div>
@@ -335,7 +336,7 @@
         ${item.price ? `<div class="gallery-price">${item.price}</div>` : ''}
         ${item.desc ? `<p>${item.desc}</p>` : '<p style="flex:1"></p>'}
         ${item.category !== 'notice' ? `
-        <a href="https://wa.me/27820000000?text=${encodeURIComponent('Hi Boland Hunting & Outdoor! I\'m interested in: ' + item.title + '. Please give me more details.')}"
+        <a href="https://wa.me/27727535744?text=${encodeURIComponent('Hi Boland Hunting & Outdoor! I\'m interested in: ' + item.title + '. Please give me more details.')}"
            target="_blank" rel="noopener" class="gallery-enquire" onclick="event.stopPropagation()">
           <i class="fab fa-whatsapp"></i> Enquire
         </a>` : ''}
@@ -393,7 +394,7 @@
     lbDesc.textContent = item.desc || '';
     lbCounter.textContent = (currentIdx + 1) + ' / ' + SPECIALS.images.length;
     const msg = encodeURIComponent('Hi Boland Hunting & Outdoor! I\'m interested in: ' + item.title + '. Please give me more details.');
-    lbEnquire.href = 'https://wa.me/27820000000?text=' + msg;
+    lbEnquire.href = 'https://wa.me/27727535744?text=' + msg;
   }
 
   document.getElementById('lb-close').addEventListener('click', closeLightbox);

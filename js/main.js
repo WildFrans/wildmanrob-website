@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('[data-enquire]').forEach(btn => {
     btn.addEventListener('click', function () {
       const product = this.dataset.enquire;
-      const msg = encodeURIComponent(`Hi Boland Hunting & Outdoor! I'm interested in: ${product}. Please can you give me more info?`);
-      window.open(`https://wa.me/27820000000?text=${msg}`, '_blank', 'noopener');
+      const msg = encodeURIComponent(`Hi Get Online SA! I am looking at the Boland Hunting & Outdoor demo website. Demo enquiry: ${product}.`);
+      window.open(`https://wa.me/27727535744?text=${msg}`, '_blank', 'noopener');
     });
   });
 

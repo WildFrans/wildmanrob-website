@@ -3,14 +3,15 @@
    Shared Components: Nav + Footer
    ============================================ */
 
-const WA_NUMBER = '27820000000';
-const WA_MESSAGE = encodeURIComponent('Hi Boland Hunting & Outdoor! I found you online and would like to find out more.');
+const WA_NUMBER = '27727535744';
+const WA_MESSAGE = encodeURIComponent('Hi Get Online SA! I am looking at the Boland Hunting & Outdoor demo website and would like to know more.');
 const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 
 const NAV_HTML = `
+<div class="demo-banner" role="note"><b>DEMO</b> · Example website by <a href="https://getonlinesa.co.za">Get Online SA</a> for a made-up shop. The phone and WhatsApp buttons here contact Get Online SA, not a shop. <a href="https://getonlinesa.co.za">Get a website like this</a></div>
 <div class="announcement-bar">
   <i class="fas fa-fire" style="color:var(--brand-gold)"></i> In-store SPECIALS every week! Visit us at 1 Main Road, Robertson &nbsp;|&nbsp;
-  <a href="tel:0230000000">023 000 0000</a>
+  <a href="tel:+27727535744">072 753 5744</a>
 </div>
 <nav class="navbar" id="mainNav">
   <div class="nav-inner">
@@ -38,7 +39,7 @@ const NAV_HTML = `
     <div class="nav-right">
       <div class="nav-phone-block">
         <span class="label">Call Us</span>
-        <a href="tel:0230000000">023 000 0000</a>
+        <a href="tel:+27727535744">072 753 5744</a>
       </div>
       <a href="${WA_LINK}" target="_blank" rel="noopener" class="btn-wa-nav">
         <i class="fab fa-whatsapp"></i>
@@ -64,8 +65,8 @@ const NAV_HTML = `
   <a href="contact.html">Contact</a>
   <div class="mobile-contact-info">
     <p>Get in touch</p>
-    <a href="tel:0230000000"><i class="fas fa-phone"></i> 023 000 0000</a>
-    <a href="${WA_LINK}" target="_blank"><i class="fab fa-whatsapp"></i> 082 000 0000</a>
+    <a href="tel:+27727535744"><i class="fas fa-phone"></i> 072 753 5744</a>
+    <a href="${WA_LINK}" target="_blank"><i class="fab fa-whatsapp"></i> 072 753 5744</a>
     <a href="mailto:info@bolandhunting.example"><i class="fas fa-envelope"></i> info@bolandhunting.example</a>
   </div>
 </div>
@@ -86,7 +87,7 @@ const FOOTER_HTML = `
         <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="soc-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="soc-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="${WA_LINK}" target="_blank" rel="noopener" class="soc-btn" title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://wa.me/27820000000" target="_blank" rel="noopener" class="soc-btn" title="Join our WhatsApp Group" style="font-size:0.7rem;font-weight:700;width:auto;padding:0 0.6rem;border-radius:20px">GROUP</a>
+        <a href="https://wa.me/27727535744" target="_blank" rel="noopener" class="soc-btn" title="Join our WhatsApp Group" style="font-size:0.7rem;font-weight:700;width:auto;padding:0 0.6rem;border-radius:20px">GROUP</a>
       </div>
     </div>
 
@@ -125,11 +126,11 @@ const FOOTER_HTML = `
       </div>
       <div class="footer-contact-row">
         <i class="fas fa-phone"></i>
-        <a href="tel:0230000000">023 000 0000</a>
+        <a href="tel:+27727535744">072 753 5744</a>
       </div>
       <div class="footer-contact-row">
         <i class="fab fa-whatsapp"></i>
-        <a href="${WA_LINK}" target="_blank">082 000 0000</a>
+        <a href="${WA_LINK}" target="_blank">072 753 5744</a>
       </div>
       <div class="footer-contact-row">
         <i class="fas fa-envelope"></i>
